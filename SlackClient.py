@@ -7,3 +7,4 @@ class SlackClient:
         self.workspaceURL = None
         self.email = None
         self.password = None
+        self.token = None

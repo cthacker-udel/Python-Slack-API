@@ -9,6 +9,8 @@ from selenium_stealth import stealth
 import time
 
 
+base_url = 'https://slack.com/api'
+
 class OauthMethods(SlackClient):
 
     def __init__(self,slackclient):
@@ -36,6 +38,25 @@ class OauthMethods(SlackClient):
         br.find_element_by_id('email').send_keys(self.client.email)
         br.find_element_by_id('password').send_keys(self.client.password)
         br.find_element_by_id('signin_btn').click()
+
+
+class AdminAnalytics(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def getFile(self):
+
+        url = base_url + '/admin.analytics.getFile'
+
+        body = self.client.SlackAdminAnalytics.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
 
 
 
