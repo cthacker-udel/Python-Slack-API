@@ -132,6 +132,25 @@ class AdminApps(SlackClient):
         pprint(request)
 
 
+class AdminAuth(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def assign_entities(self):
+
+        url = base_url + '/admin.auth.policy.assignEntities'
+
+        body = self.client.SlackAdminAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
+
 
 
 
