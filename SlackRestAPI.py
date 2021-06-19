@@ -148,6 +148,16 @@ class AdminAuth(SlackClient):
 
         pprint(request)
 
+    def fetch_all_entities(self):
+
+        url = base_url + '/admin.auth.policy.getEntities'
+
+        body = self.client.SlackAdminAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+        
+        pprint(request)
+
 
 
 
