@@ -263,6 +263,17 @@ class AdminConversations(SlackClient):
         pprint(request)
 
 
+    def get_conversation_preferences_for_public_or_private_channel(self):
+
+        url = base_url + '/admin.conversations.getConversationPrefs'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
