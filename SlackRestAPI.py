@@ -205,6 +205,16 @@ class AdminBarriers(SlackClient):
 
         pprint(request)
 
+    def update_existing_information_barrier(self):
+
+        url = base_url + '/admin.barriers.update'
+
+        body = self.client.SlackAdminBarriers.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
