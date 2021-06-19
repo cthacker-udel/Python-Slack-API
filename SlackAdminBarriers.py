@@ -8,6 +8,8 @@ class SlackAdminBarriers(SlackClient):
         self.primary_usergroup_id = None
         self.restricted_subjects = None
         self.barrier_id = None
+        self.cursor = None
+        self.limit = None
 
 
     def generate_queries(self):
@@ -22,6 +24,10 @@ class SlackAdminBarriers(SlackClient):
             body['restricted_subjects'] = self.restricted_subjects
         if self.barrier_id != None:
             body['barrier_id'] = self.barrier_id
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
 
         return body
 
@@ -31,3 +37,5 @@ class SlackAdminBarriers(SlackClient):
         self.primary_usergroup_id = None
         self.restricted_subjects = None
         self.barrier_id = None
+        self.cursor = None
+        self.limit = None

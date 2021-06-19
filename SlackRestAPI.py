@@ -195,6 +195,16 @@ class AdminBarriers(SlackClient):
 
         pprint(request)
 
+    def get_all_information_barriers(self):
+
+        url = base_url + '/admin.barriers.list'
+
+        body = self.client.SlackAdminBarriers.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
