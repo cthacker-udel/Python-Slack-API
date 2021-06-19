@@ -225,7 +225,18 @@ class AdminConversations(SlackClient):
 
         url = base_url + '/admin.conversations.archive'
 
-        body = self.client.SlackAdminBarriers.generate_queries()
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+    def convert_public_channel_to_private(self):
+
+        url = base_url + '/admin.conversations.convertToPrivate'
+
+        body = self.client.SlackAdminConversations.generate_queries()
 
         request = requests.post(url,auth=self.client.token,json=body)
 
