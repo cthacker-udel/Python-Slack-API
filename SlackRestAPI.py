@@ -169,6 +169,22 @@ class AdminAuth(SlackClient):
 
         pprint(request)
 
+class AdminBarriers(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def create_information_barrier(self):
+
+        url = base_url + '/admin.barriers.create'
+
+        body = self.client.SlackAdminBarriers.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
