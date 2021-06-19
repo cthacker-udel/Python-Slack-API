@@ -7,6 +7,8 @@ class SlackAdminApps(SlackClient):
         self.enterprise_id = None
         self.request_id = None
         self.team_id = None
+        self.cursor = None
+        self.limit = None
 
     def generate_queries(self):
 
@@ -20,6 +22,10 @@ class SlackAdminApps(SlackClient):
             body['request_id'] = self.request_id
         if self.team_id != None:
             body['team_id'] = self.team_id
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
         return body
 
     def clear_queries(self):
@@ -27,3 +33,5 @@ class SlackAdminApps(SlackClient):
         self.enterprise_id = None
         self.request_id = None
         self.team_id = None
+        self.cursor = None
+        self.limit = None
