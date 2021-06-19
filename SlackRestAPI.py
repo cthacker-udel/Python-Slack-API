@@ -155,7 +155,18 @@ class AdminAuth(SlackClient):
         body = self.client.SlackAdminAuth.generate_queries()
 
         request = requests.post(url,auth=self.client.token,json=body)
-        
+
+        pprint(request)
+
+
+    def remove_specified_entities(self):
+
+        url = base_url + '/admin.auth.policy.removeEntities'
+
+        body = self.client.SlackAdminAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
         pprint(request)
 
 
