@@ -216,6 +216,12 @@ class AdminBarriers(SlackClient):
         pprint(request)
 
 
+class AdminConversations(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
 
 
 
