@@ -6,6 +6,8 @@ class SlackAdmin(SlackClient):
         self.entity_ids = []
         self.entity_type = None
         self.policy_name = None
+        self.cursor = None
+        self.limit = None
 
 
     def generate_queries(self):
@@ -18,6 +20,10 @@ class SlackAdmin(SlackClient):
             body['entity_type'] = self.entity_type
         if self.policy_name != None:
             body['policy_name'] = self.policy_name
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
 
         return body
 
@@ -26,3 +32,5 @@ class SlackAdmin(SlackClient):
         self.entity_ids = []
         self.entity_type = None
         self.policy_name = None
+        self.cursor = None
+        self.limit = None
