@@ -91,6 +91,16 @@ class AdminApps(SlackClient):
 
         pprint(request)
 
+    def uninstall_app(self):
+
+        url = base_url + '/admin.apps.uninstall'
+
+        body = self.client.SlackAdminApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
