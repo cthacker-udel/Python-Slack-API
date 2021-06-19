@@ -56,6 +56,33 @@ class AdminAnalytics(SlackClient):
 
         pprint(request)
 
+class AdminApps(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def approve_app_for_installation(self):
+
+        url = base_url + '/admin.apps.approve'
+
+        body = self.client.SlackAdminApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+    def clear_app_resolution(self):
+
+        url = base_url + '/admin.apps.clearResolution'
+
+        body = self.client.SlackAdminApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
