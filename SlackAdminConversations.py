@@ -9,6 +9,8 @@ class SlackAdminConversations(SlackClient):
         self.description = None
         self.org_wide = None
         self.team_id = None
+        self.cursor = None
+        self.limit = None
 
 
     def generate_queries(self):
@@ -27,6 +29,10 @@ class SlackAdminConversations(SlackClient):
             body['org_wide'] = self.org_wide
         if self.team_id != None:
             body['team_id'] = self.team_id
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
 
         return body
 
@@ -37,3 +43,5 @@ class SlackAdminConversations(SlackClient):
         self.description = None
         self.org_wide = None
         self.team_id = None
+        self.cursor = None
+        self.limit = None

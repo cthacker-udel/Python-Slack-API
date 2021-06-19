@@ -283,6 +283,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def get_all_workspaces_within_enterprise_org(self):
+
+        url = base_url + '/admin.conversations.getTeams'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
