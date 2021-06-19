@@ -293,6 +293,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def invite_user_to_channel(self):
+
+        url = base_url + '/admin.conversations.invite'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
