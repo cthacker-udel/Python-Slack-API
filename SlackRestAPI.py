@@ -61,7 +61,7 @@ class AdminApps(SlackClient):
     def __init__(self,client):
         self.client = client
 
-    def approve_app_for_installation(self):
+    def approve_app_installation(self):
 
         url = base_url + '/admin.apps.approve'
 
@@ -80,6 +80,18 @@ class AdminApps(SlackClient):
         request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
+
+    def restrict_app_installation(self):
+
+        url = base_url + '/admin.apps.restrict'
+
+        body = self.client.SlackAdminApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
