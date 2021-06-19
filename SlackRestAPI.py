@@ -221,6 +221,18 @@ class AdminConversations(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def archive_conversation(self):
+
+        url = base_url + '/admin.conversations.archive'
+
+        body = self.client.SlackAdminBarriers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
