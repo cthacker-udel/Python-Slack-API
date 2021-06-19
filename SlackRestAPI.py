@@ -121,6 +121,18 @@ class AdminApps(SlackClient):
 
         pprint(request)
 
+    def list_restricted_apps(self):
+
+        url = base_url + '/admin.apps.restricted.list'
+
+        body = self.client.SlackAdminApps.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
+
 
 
 
