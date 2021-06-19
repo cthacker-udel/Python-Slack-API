@@ -185,6 +185,16 @@ class AdminBarriers(SlackClient):
 
         pprint(request)
 
+    def delete_existing_information_barrier(self):
+
+        url = base_url + '/admin.barriers.delete'
+
+        body = self.client.SlackAdminBarriers.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 

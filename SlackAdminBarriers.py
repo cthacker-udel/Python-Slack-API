@@ -7,6 +7,7 @@ class SlackAdminBarriers(SlackClient):
         self.barriered_from_usergroup_ids = []
         self.primary_usergroup_id = None
         self.restricted_subjects = None
+        self.barrier_id = None
 
 
     def generate_queries(self):
@@ -18,7 +19,9 @@ class SlackAdminBarriers(SlackClient):
         if self.primary_usergroup_id != None:
             body['primary_usergroup_id'] = self.primary_usergroup_id
         if self.restricted_subjects != None:
-            body['restricted_subjects']
+            body['restricted_subjects'] = self.restricted_subjects
+        if self.barrier_id != None:
+            body['barrier_id'] = self.barrier_id
 
         return body
 
@@ -27,3 +30,4 @@ class SlackAdminBarriers(SlackClient):
         self.barriered_from_usergroup_ids = []
         self.primary_usergroup_id = None
         self.restricted_subjects = None
+        self.barrier_id = None
