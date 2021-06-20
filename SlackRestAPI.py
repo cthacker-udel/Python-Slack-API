@@ -393,6 +393,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def list_channel_groups(self):
+
+        url = base_url + '/admin.conversations.restrictAccess.listGroups'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
