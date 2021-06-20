@@ -12,7 +12,6 @@ class SlackAdminConversations(SlackClient):
         self.cursor = None
         self.limit = None
         self.user_ids = []
-
         self.cursor = None
         self.limit = None
         self.query = None
@@ -20,12 +19,15 @@ class SlackAdminConversations(SlackClient):
         self.sort = None
         self.sort_dir = None
         self.team_ids = None
+        self.prefs = []
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.prefs != None:
+            body['prefs'] = self.prefs
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.limit != None:
