@@ -343,6 +343,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def set_channel_retention_policy(self):
+
+        url = base_url + '/admin.conversations.setCustomRetention'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
