@@ -303,6 +303,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def remove_custom_retention(self):
+
+        url = base_url + '/admin.conversations.removeCustomRetention'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
