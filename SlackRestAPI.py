@@ -315,7 +315,17 @@ class AdminConversations(SlackClient):
 
     def rename_channel(self):
 
-        url = base_url + '/admin.conversations/rename'
+        url = base_url + '/admin.conversations.rename'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+    def search_enterprise_channel(self):
+
+        url = base_url + '/admin.conversations.search'
 
         body = self.client.SlackAdminConversations.generate_queries()
 

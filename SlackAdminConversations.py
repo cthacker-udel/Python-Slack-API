@@ -13,11 +13,33 @@ class SlackAdminConversations(SlackClient):
         self.limit = None
         self.user_ids = []
 
+        self.cursor = None
+        self.limit = None
+        self.query = None
+        self.search_channel_types = None
+        self.sort = None
+        self.sort_dir = None
+        self.team_ids = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
+        if self.query != None:
+            body['query'] = self.query
+        if self.search_channel_types != None:
+            body['search_channel_types'] = self.search_channel_types
+        if self.sort != None:
+            body['sort'] = self.sort
+        if self.sort_dir != None:
+            body['sort_dir'] = self.sort_dir
+        if self.team_ids != None:
+            body['team_ids'] = self.team_ids
         if self.channel_id != None:
             body['channel_id'] = self.channel_id
         if self.is_private != None:
@@ -49,3 +71,10 @@ class SlackAdminConversations(SlackClient):
         self.cursor = None
         self.limit = None
         self.user_ids = None
+        self.cursor = None
+        self.limit = None
+        self.query = None
+        self.search_channel_types = None
+        self.sort = None
+        self.sort_dir = None
+        self.team_ids = None
