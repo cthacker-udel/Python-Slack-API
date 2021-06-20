@@ -381,6 +381,18 @@ class AdminConversations(SlackClient):
 
         request = requests.get(url,auth=self.client.token,params=body)
 
+        pprint(request)
+
+    def add_channel_allowlist(self):
+
+        url = base_url + '/admin.conversations.restrictAccess.addGroup'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
