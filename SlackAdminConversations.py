@@ -21,12 +21,15 @@ class SlackAdminConversations(SlackClient):
         self.team_ids = None
         self.prefs = []
         self.duration_days = None
+        self.channel_ids = []
 
 
     def generate_queries(self):
 
         body = {}
 
+        if len(self.channel_ids) > 0:
+            body['channel_ids'] = ','.join(self.channel_ids)
         if self.duration_days != None:
             body['duration_days'] = self.duration_days
         if self.prefs != None:

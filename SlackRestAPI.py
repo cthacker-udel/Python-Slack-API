@@ -373,6 +373,14 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def list_all_disconnected_channels(self):
+
+        url = base_url + '/admin.conversations.ekm.listOriginalConnectedChannelInfo'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
 
 
 
