@@ -353,6 +353,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def set_workspaces_in_enterprise_org(self):
+
+        url = base_url + '/admin.conversations.setTeams'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
