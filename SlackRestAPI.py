@@ -419,6 +419,17 @@ class AdminEmoji(SlackClient):
         self.client = client
 
 
+    def add_emoji(self):
+
+        url = base_url + '/admin.emoji.add'
+
+        body = self.client.SlackAdminEmoji.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
 
 
 
