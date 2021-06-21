@@ -403,6 +403,16 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+    def remove_private_channel_group(self):
+
+        url = base_url + '/admin.conversations.restrictAccess.removeGroup'
+
+        body = self.client.SlackAdminConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
