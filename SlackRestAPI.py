@@ -516,6 +516,16 @@ class AdminInviteRequests(SlackClient):
 
         pprint(request)
 
+    def list_denied_requests(self):
+
+        url = base_url + '/admin.inviteRequests.denied.list'
+
+        body = self.client.SlackAdminInviteRequests.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
