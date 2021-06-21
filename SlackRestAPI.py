@@ -506,6 +506,16 @@ class AdminInviteRequests(SlackClient):
 
         pprint(request)
 
+    def list_approved_requests(self):
+
+        url = base_url + '/admin.inviteRequests.approved.list'
+
+        body = self.client.SlackAdminInviteRequests.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
