@@ -413,6 +413,11 @@ class AdminConversations(SlackClient):
 
         pprint(request)
 
+class AdminEmoji(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
 
 
 
