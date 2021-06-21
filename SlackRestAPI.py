@@ -459,6 +459,16 @@ class AdminEmoji(SlackClient):
 
         pprint(request)
 
+    def rename_emoji(self):
+
+        url = base_url + '/admin.emoji.rename'
+
+        body = self.client.SlackAdminEmoji.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 

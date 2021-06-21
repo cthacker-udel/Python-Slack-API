@@ -8,12 +8,15 @@ class SlackAdminEmoji(SlackClient):
         self.alias_for = None
         self.cursor = None
         self.limit = None
+        self.new_name = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.new_name != None:
+            body['new_name'] = self.new_name
         if self.name != None:
             body['name'] = self.name
         if self.url != None:
