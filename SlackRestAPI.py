@@ -470,6 +470,23 @@ class AdminEmoji(SlackClient):
         pprint(request)
 
 
+class AdminInviteRequests(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def approve_request(self):
+
+        url = base_url + '/admin.inviteRequests.approve'
+
+        body = self.client.SlackAdminInviteRequests.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
