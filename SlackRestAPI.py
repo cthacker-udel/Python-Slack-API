@@ -429,6 +429,16 @@ class AdminEmoji(SlackClient):
 
         pprint(request)
 
+    def add_emoji_alias(self):
+
+        url = base_url + '/admin.emoji.addAlias'
+
+        body = self.client.SlackAdminEmoji.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
