@@ -486,6 +486,17 @@ class AdminInviteRequests(SlackClient):
 
         pprint(request)
 
+    def deny_request(self):
+
+        url = base_url + '/admin.inviteRequests.deny'
+
+        body = self.client.SlackAdminInviteRequests.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
