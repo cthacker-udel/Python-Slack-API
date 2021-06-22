@@ -633,6 +633,22 @@ class AdminTeams(SlackClient):
         pprint(request)
 
 
+class AdminUserGroups(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def add_idp_group_channel(self):
+
+        url = base_url + '/admin.usergroups.addChannels'
+
+        body = self.client.SlackAdminUserGroups.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
