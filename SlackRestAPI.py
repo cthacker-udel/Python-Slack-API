@@ -526,6 +526,11 @@ class AdminInviteRequests(SlackClient):
 
         pprint(request)
 
+class AdminTeams(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
 
 
 
