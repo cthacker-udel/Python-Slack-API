@@ -688,17 +688,6 @@ class AdminUserGroups(SlackClient):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 def main():
 
     client = SlackClient('636558213122.2172017410279')
