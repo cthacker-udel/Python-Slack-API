@@ -582,6 +582,16 @@ class AdminTeams(SlackClient):
 
         pprint(request)
 
+    def set_default_workspace_channels(self):
+
+        url = base_url + '/admin.teams.settings.setDefaultChannels'
+
+        body = self.client.SlackTeams.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
