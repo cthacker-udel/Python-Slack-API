@@ -532,6 +532,17 @@ class AdminTeams(SlackClient):
         self.client = client
 
 
+    def list_admins(self):
+
+        url = base_url + '/admin.teams.admins.list'
+
+        body = self.client.SlackTeams.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
 
 
 
