@@ -11,10 +11,13 @@ class SlackTeams(SlackClient):
         self.team_description = None
         self.team_discoverability = None
         self.channel_ids = []
+        self.discoverability = None
 
 
     def generate_queries(self):
         body = {}
+        if self.discoverability != None:
+            body['discoverability'] = self.discoverability
         if len(self.channel_ids) > 0:
             body['channel_ids'] = self.channel_ids
         if self.team_id != None:
