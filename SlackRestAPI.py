@@ -592,6 +592,16 @@ class AdminTeams(SlackClient):
 
         pprint(request)
 
+    def set_workspace_description(self):
+
+        url = base_url + '/admin.team.settings.setDescription'
+
+        body = self.client.SlackTeams.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
