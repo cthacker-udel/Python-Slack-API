@@ -8,12 +8,15 @@ class SlackAdminUserGroups(SlackClient):
         self.team_id = None
         self.team_ids = []
         self.auto_provision = None
+        self.include_num_members = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.include_members != None:
+            body['include_num_members'] = self.include_num_members
         if len(self.channel_ids) > 0:
             body['channel_ids'] = ','.join(self.channel_ids)
         if self.usergroup_id != None:
@@ -34,3 +37,4 @@ class SlackAdminUserGroups(SlackClient):
         self.team_id = None
         self.team_ids = []
         self.auto_provision = None
+        self.include_num_members = None

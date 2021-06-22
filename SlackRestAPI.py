@@ -658,6 +658,16 @@ class AdminUserGroups(SlackClient):
 
         pprint(request)
 
+    def list_idp_channels(self):
+
+        url = base_url + '/admin.usergroups.listChannels'
+
+        body = self.client.SlackAdminUserGroups.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
