@@ -562,6 +562,18 @@ class AdminTeams(SlackClient):
 
         pprint(request)
 
+    def list_workspace_owners(self):
+
+        url = base_url + '/admin.teams.owners.list'
+
+        body = self.client.SlackTeams.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
+
 
 
 
