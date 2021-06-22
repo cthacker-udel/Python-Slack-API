@@ -612,6 +612,16 @@ class AdminTeams(SlackClient):
 
         pprint(request)
 
+    def set_workspace_icons(self):
+
+        url = base_url + '/admin.teams.settings.setIcon'
+
+        body = self.client.SlackTeams.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
