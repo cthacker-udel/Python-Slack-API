@@ -669,6 +669,17 @@ class AdminUserGroups(SlackClient):
         pprint(request)
 
 
+    def remove_idp_channel(self):
+
+        url = base_url + '/admin.usergroups.removeChannels'
+
+        body = self.client.SlackAdminUserGroups.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
