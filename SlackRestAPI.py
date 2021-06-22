@@ -648,6 +648,16 @@ class AdminUserGroups(SlackClient):
 
         pprint(request)
 
+    def associate_workspace_to_idp(self):
+
+        url = base_url + '/admin.usergroups.addTeams'
+
+        body = self.client.SlackAdminUserGroups.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
