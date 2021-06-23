@@ -705,6 +705,15 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def list_workspace_users(self):
+
+        url = base_url + '/admin.users.list'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
 
 
 
