@@ -8,6 +8,11 @@ class SlackAdminUsers(SlackClient):
         self.channel_ids = []
         self.is_restricted = None
         self.is_ultra_restricted = None
+        self.email = None
+        self.custom_message = None
+        self.guest_expiration_ts = None
+        self.real_name = None
+        self.resend = None
 
     def generate_queries(self):
         body = {}
@@ -21,6 +26,16 @@ class SlackAdminUsers(SlackClient):
             body['is_restricted'] = self.is_restricted
         if self.is_ultra_restricted != None:
             body['is_ultra_restricted'] = self.is_ultra_restricted
+        if self.email != None:
+            body['email'] = self.email
+        if self.custom_message != None:
+            body['custom_message'] = self.custom_message
+        if self.guest_expiration_ts != None:
+            body['guest_expiration_ts'] = self.guest_expiration_ts
+        if self.real_name != None:
+            body['real_name'] = self.real_name
+        if self.resend != None:
+            body['resend'] = self.resend;
         return body
 
     def clear_queries(self):
@@ -29,3 +44,8 @@ class SlackAdminUsers(SlackClient):
         self.channel_ids = []
         self.is_restricted = None
         self.is_ultra_restricted = None
+        self.email = None
+        self.custom_message = None
+        self.guest_expiration_ts = None
+        self.real_name = None
+        self.resend = None
