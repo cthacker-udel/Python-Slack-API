@@ -680,6 +680,12 @@ class AdminUserGroups(SlackClient):
         pprint(request)
 
 
+class AdminUsers(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
 
 
 
