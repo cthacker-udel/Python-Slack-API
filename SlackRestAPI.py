@@ -745,6 +745,16 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def set_owner(self):
+
+        url = base_url + '/admin.users.setOwner'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
