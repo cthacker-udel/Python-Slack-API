@@ -786,6 +786,17 @@ class AdminUsers(SlackClient):
         pprint(request)
 
 
+    def revoke_user_session(self):
+
+        url = base_url + '/admin.users.session.invalidate'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
