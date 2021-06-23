@@ -843,6 +843,20 @@ class SlackApi(SlackClient):
         pprint(request)
 
 
+class SlackApps(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def generate_websocket_url(self):
+
+        url = base_url + '/apps.connections.open'
+
+        request = requests.post(url,auth=self.client.token)
+
+        pprint(request)
+
+
 
 
 
