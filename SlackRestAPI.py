@@ -725,6 +725,16 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def set_admin(self):
+
+        url = base_url + '/admin.users.setAdmin'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
