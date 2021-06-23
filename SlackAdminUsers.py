@@ -15,9 +15,12 @@ class SlackAdminUsers(SlackClient):
         self.resend = None
         self.cursor = None
         self.limit = None
+        self.expiration_ts = None
 
     def generate_queries(self):
         body = {}
+        if self.expiration_ts != None:
+            body['expiration_ts'] = self.expiration_ts
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.limit != None:
@@ -57,3 +60,4 @@ class SlackAdminUsers(SlackClient):
         self.resend = None
         self.cursor = None
         self.limit = None
+        self.expiration_ts = None

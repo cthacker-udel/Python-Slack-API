@@ -735,6 +735,16 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def set_user_expiration(self):
+
+        url = base_url + '/admin.users.setExpiration'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
