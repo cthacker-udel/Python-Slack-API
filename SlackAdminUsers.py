@@ -17,8 +17,12 @@ class SlackAdminUsers(SlackClient):
         self.limit = None
         self.expiration_ts = None
         self.user_ids = []
+        self.desktop_app_browser_quit = None
+        self.duration = None
+
 
     def generate_queries(self):
+
         body = {}
 
         if len(self.user_ids) > 0:

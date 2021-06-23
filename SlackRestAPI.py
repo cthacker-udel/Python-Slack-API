@@ -796,6 +796,38 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def list_active_users(self):
+
+        url = base_url + '/admin.users.session.list'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+    def reset_all_sessions(self):
+
+        url = base_url + '/admin.users.session.reset'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+    def configure_user_settings(self):
+
+        url = base_url + '/admin.users.session.setSettings'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
