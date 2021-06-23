@@ -827,6 +827,22 @@ class AdminUsers(SlackClient):
         pprint(request)
 
 
+class SlackApi(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def check_api_calling_code(self):
+
+        url = base_url + '/api/api.test'
+
+        body = self.client.SlackAPI.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
