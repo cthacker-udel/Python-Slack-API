@@ -856,6 +856,28 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def get_authorization_list(self):
+
+        url = base_url + '/apps.event.authorization.list'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+    def uninstall_app(self):
+
+        url = base_url + '/apps.uninstall'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
