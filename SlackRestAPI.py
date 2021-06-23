@@ -715,6 +715,16 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def remove_workspace_user(self):
+
+        url = base_url + '/admin.users.remove'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
