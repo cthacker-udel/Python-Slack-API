@@ -16,9 +16,13 @@ class SlackAdminUsers(SlackClient):
         self.cursor = None
         self.limit = None
         self.expiration_ts = None
+        self.user_ids = []
 
     def generate_queries(self):
         body = {}
+
+        if len(self.user_ids) > 0:
+            body['user_ids'] = self.user_ids
         if self.expiration_ts != None:
             body['expiration_ts'] = self.expiration_ts
         if self.cursor != None:

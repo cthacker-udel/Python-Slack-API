@@ -765,6 +765,16 @@ class AdminUsers(SlackClient):
 
         pprint(request)
 
+    def clear_user_session_settings(self):
+
+        url = base_url + '/admin.users.session.clearSettings'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
