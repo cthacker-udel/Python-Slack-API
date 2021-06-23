@@ -685,6 +685,16 @@ class AdminUsers(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def add_user_to_workspace(self):
+
+        url = base_url + '/admin.users.assign'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
