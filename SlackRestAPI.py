@@ -753,6 +753,15 @@ class AdminUsers(SlackClient):
 
         request = requests.post(url,auth=self.client.token,json=body)
 
+        pprint(request)
+
+    def set_regular_user(self):
+
+        url = base_url + '/admin.users.setRegular'
+
+        body = self.client.SlackAdminUsers.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
 
