@@ -934,6 +934,16 @@ class SlackCalls(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def register_new_call(self):
+
+        url = base_url + '/calls.add'
+
+        body = self.client.SlackCalls.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
