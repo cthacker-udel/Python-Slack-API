@@ -892,6 +892,16 @@ class SlackAuth(SlackClient):
 
         pprint(request)
 
+    def check_token(self):
+
+        url = base_url + '/auth.test'
+
+        body = self.client.SlackAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
