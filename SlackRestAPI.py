@@ -838,7 +838,7 @@ class SlackApi(SlackClient):
 
         body = self.client.SlackAPI.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url, auth=self.client.token, json=body)
 
         pprint(request)
 
@@ -872,7 +872,7 @@ class SlackApps(SlackClient):
 
         body = self.client.SlackApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url, auth=self.client.token, json=body)
 
         pprint(request)
 
@@ -888,7 +888,7 @@ class SlackAuth(SlackClient):
 
         body = self.client.SlackAuth.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url, auth=self.client.token, params=body)
 
         pprint(request)
 
@@ -898,7 +898,17 @@ class SlackAuth(SlackClient):
 
         body = self.client.SlackAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url, auth=self.client.token, json=body)
+
+        pprint(request)
+
+    def list_token_workspace_access(self):
+
+        url = base_url + '/auth.teams.list'
+
+        body = self.client.SlackAuth.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
 
         pprint(request)
 
