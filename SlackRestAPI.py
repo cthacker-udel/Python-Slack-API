@@ -913,6 +913,23 @@ class SlackAuth(SlackClient):
         pprint(request)
 
 
+class SlackBots(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def get_bot_info(self):
+
+        url = base_url + '/bots.info'
+
+        body = self.client.SlackBots.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
 
 
 
