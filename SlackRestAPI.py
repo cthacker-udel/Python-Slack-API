@@ -929,6 +929,11 @@ class SlackBots(SlackClient):
 
         pprint(request)
 
+class SlackCalls(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
 
 
 
