@@ -876,6 +876,23 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+class SlackAuth(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def revoke_token(self):
+
+        url = base_url + '/auth.revoke'
+
+        body = self.client.SlackAuth.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
 
 
 
