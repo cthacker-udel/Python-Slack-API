@@ -25,11 +25,14 @@ class SlackChat(SlackClient):
         self.unfurl_links = None
         self.unfurl_media = None
         self.username = None
+        self.post_at = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.post_at != None:
+            body['post_at'] = self.post_at
         if len(self.blocks) > 0:
             body['blocks'] = self.blocks
         if self.container_id != None:
@@ -100,3 +103,4 @@ class SlackChat(SlackClient):
         self.unfurl_links = None
         self.unfurl_media = None
         self.username = None
+        self.post_at = None
