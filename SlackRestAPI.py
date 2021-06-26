@@ -954,6 +954,16 @@ class SlackCalls(SlackClient):
 
         pprint(request)
 
+    def get_call_info(self):
+
+        url = base_url + '/calls.info'
+
+        body = self.client.SlackCalls.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
