@@ -1069,6 +1069,16 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def custom_unfurl_behavior(self):
+
+        url = base_url + '/chat.unfurl'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 

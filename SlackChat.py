@@ -26,11 +26,26 @@ class SlackChat(SlackClient):
         self.unfurl_media = None
         self.username = None
         self.post_at = None
+        self.unfurls = None
+        self.user_auth_blocks = []
+        self.user_auth_message = None
+        self.user_auth_required = None
+        self.user_auth_url = None
 
     def generate_queries(self):
 
         body = {}
 
+        if len(self.user_auth_blocks) > 0:
+            body['user_auth_blocks'] = self.user_auth_blocks
+        if self.user_auth_message != None:
+            body['user_auth_message'] = self.user_auth_message
+        if self.user_auth_required != None:
+            body['user_auth_required'] = self.user_auth_required
+        if self.user_auth_url != None:
+            body['user_auth_url'] = self.user_auth_url
+        if self.unfurls != None:
+            body['unfurls'] = self.unfurls
         if self.post_at != None:
             body['post_at'] = self.post_at
         if len(self.blocks) > 0:
@@ -104,3 +119,8 @@ class SlackChat(SlackClient):
         self.unfurl_media = None
         self.username = None
         self.post_at = None
+        self.unfurls = None
+        self.user_auth_blocks = []
+        self.user_auth_message = None
+        self.user_auth_required = None
+        self.user_auth_url = None
