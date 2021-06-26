@@ -1135,6 +1135,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def fetch_conversation_history(self):
+
+        url = base_url + '/conversations.history'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
