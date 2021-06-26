@@ -1035,7 +1035,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,params=body)
+        request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
 
@@ -1044,6 +1044,12 @@ class SlackChat(SlackClient):
         url = base_url + '/chat.postEphemeral'
 
         body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
