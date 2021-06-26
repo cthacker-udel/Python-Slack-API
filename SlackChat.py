@@ -32,10 +32,24 @@ class SlackChat(SlackClient):
         self.user_auth_required = None
         self.user_auth_url = None
 
+        self.cursor = None
+        self.oldest = None
+        self.limit = None
+        self.latest = None
+
+
     def generate_queries(self):
 
         body = {}
 
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.limit != None:
+            body['limit'] = self.limit
+        if self.oldest != None:
+            body['oldest'] = self.oldest
+        if self.latest != None:
+            body['latest'] = self.latest
         if len(self.user_auth_blocks) > 0:
             body['user_auth_blocks'] = self.user_auth_blocks
         if self.user_auth_message != None:
@@ -124,3 +138,7 @@ class SlackChat(SlackClient):
         self.user_auth_message = None
         self.user_auth_required = None
         self.user_auth_url = None
+        self.latest = None
+        self.limit = None
+        self.oldest = None
+        self.cursor = None
