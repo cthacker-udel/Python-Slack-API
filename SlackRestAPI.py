@@ -1100,6 +1100,22 @@ class SlackChat(SlackClient):
         pprint(request)
 
 
+class SlackConversations(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def archive_conversation(self):
+
+        url = base_url + '/conversations.archive'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
