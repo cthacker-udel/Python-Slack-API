@@ -1039,6 +1039,12 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def send_ephemeral_message(self):
+
+        url = base_url + '/chat.postEphemeral'
+
+        body = self.client.SlackChat.generate_queries()
+
 
 
 

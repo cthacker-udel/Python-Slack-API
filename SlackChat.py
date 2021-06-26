@@ -9,11 +9,17 @@ class SlackChat(SlackClient):
         self.scheduled_message_id = None
         self.message_ts = None
         self.text = None
+        self.attachments = None
+        self.user = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.attachments != None:
+            body['attachments'] = self.attachments
+        if self.user != None:
+            body['user'] = self.user
         if self.message_ts != None:
             body['message_ts'] = self.message_ts
         if self.scheduled_message_id != None:
@@ -36,3 +42,5 @@ class SlackChat(SlackClient):
         self.scheduled_message_id = None
         self.message_ts = None
         self.text = None
+        self.attachments = None
+        self.user = None
