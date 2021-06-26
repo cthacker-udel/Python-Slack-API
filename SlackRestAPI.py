@@ -1009,6 +1009,18 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def delete_scheduled_message(self):
+
+        url = base_url + '/chat.deleteScheduledMessage'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
