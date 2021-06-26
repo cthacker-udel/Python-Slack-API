@@ -8,6 +8,7 @@ class SlackChat(SlackClient):
         self.as_user = None
         self.scheduled_message_id = None
         self.message_ts = None
+        self.text = None
 
     def generate_queries(self):
 
@@ -23,6 +24,8 @@ class SlackChat(SlackClient):
             body['ts'] = self.ts
         if self.as_user != None:
             body['as_user'] = self.as_user
+        if self.text != None:
+            body['text'] = self.text
         return body
 
 
@@ -32,3 +35,4 @@ class SlackChat(SlackClient):
         self.as_user = None
         self.scheduled_message_id = None
         self.message_ts = None
+        self.text = None
