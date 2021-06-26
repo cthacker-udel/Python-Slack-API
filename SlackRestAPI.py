@@ -994,6 +994,23 @@ class SlackCalls(SlackClient):
 
         pprint(request)
 
+class SlackChat(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def delete_message(self):
+
+        url = base_url + '/chat.delete'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
+
 
 
 
