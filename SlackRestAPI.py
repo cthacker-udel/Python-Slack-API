@@ -984,6 +984,16 @@ class SlackCalls(SlackClient):
 
         pprint(request)
 
+    def remove_call_participant(self):
+
+        url = base_url + '/calls.participants.remove'
+
+        body = self.client.SlackCalls.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
