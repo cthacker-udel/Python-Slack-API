@@ -944,6 +944,16 @@ class SlackCalls(SlackClient):
 
         pprint(request)
 
+    def end_call(self):
+
+        url = base_url + '/calls.end'
+
+        body = self.client.SlackCall.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
