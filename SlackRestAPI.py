@@ -1089,6 +1089,16 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def list_scheduled_messages(self):
+
+        url = base_url + '/chat.scheduledMessages.list'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
