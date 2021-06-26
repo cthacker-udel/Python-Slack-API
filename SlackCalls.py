@@ -2,6 +2,25 @@ from SlackClient import SlackClient
 
 class SlackCalls(SlackClient):
 
+    class SlackCallUser(SlackClient):
+
+        def __init__(self):
+            self.slack_id = None
+            self.external_id = None
+            self.display_name = None
+            self.avatar_url = None
+
+        def generate_json_user(self):
+
+            body = {}
+            if self.slack_id != None:
+                body['slack_id'] = self.slack_id
+            if self.external_id != None:
+                body['external_id'] = self.external_id
+            if self.avatar_url != None:
+                body['avatar_url'] = self.avatar_url
+            return body
+
     def __init__(self):
         self.external_unique_id = None
         self.join_url = None
@@ -13,11 +32,14 @@ class SlackCalls(SlackClient):
         self.users = None
         self.id = None
         self.duration = None
+        self.users = []
 
     def generate_queries(self):
 
         body = {}
 
+        if len(self.users) > 0:
+            body['users'] = self.users
         if self.id != None:
             body['id'] = self.id
         if self.duration != None:
