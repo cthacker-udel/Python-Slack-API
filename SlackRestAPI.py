@@ -1019,6 +1019,16 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def get_chat_permalink(self):
+
+        url = base_url + '/chat.getPermalink'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
