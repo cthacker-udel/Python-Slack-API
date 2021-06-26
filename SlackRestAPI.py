@@ -1029,6 +1029,16 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def share_chat_me_message(self):
+
+        url = base_url + '/chat.meMessage'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
