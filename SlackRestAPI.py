@@ -1079,6 +1079,16 @@ class SlackChat(SlackClient):
 
         pprint(request)
 
+    def update_message(self):
+
+        url = base_url + '/chat.update'
+
+        body = self.client.SlackChat.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
