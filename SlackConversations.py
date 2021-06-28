@@ -13,12 +13,18 @@ class SlackConversations(SlackClient):
         self.latest = None
         self.limit = None
         self.oldest = None
+        self.include_locate = None
+        self.include_non_members = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.include_locate:
+            body['include_locale'] = self.include_locate
+        if self.include_non_members != None:
+            body['include_num_members']
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.inclusive != None:
