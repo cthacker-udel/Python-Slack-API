@@ -1195,6 +1195,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def list_channels(self):
+
+        url = base_url + '/conversations.list'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
