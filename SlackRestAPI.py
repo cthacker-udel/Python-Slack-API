@@ -1225,6 +1225,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def open_or_resume_direct_message(self):
+
+        url = base_url + '/conversations.open'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
