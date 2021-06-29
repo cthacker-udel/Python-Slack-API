@@ -1215,6 +1215,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def retrieve_conversation_members(self):
+
+        url = base_url + '/conversations.members'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
