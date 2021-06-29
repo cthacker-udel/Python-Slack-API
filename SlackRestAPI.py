@@ -1157,13 +1157,25 @@ class SlackConversations(SlackClient):
 
     def invite_user(self):
 
-        url = base_url + '/conversations.info'
+        url = base_url + '/conversations.invite'
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
+
+    def join_conversation(self):
+
+        url = base_url + '/conversations.join'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
