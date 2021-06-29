@@ -1155,6 +1155,18 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def invite_user(self):
+
+        url = base_url + '/conversations.info'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
+
 
 
 
