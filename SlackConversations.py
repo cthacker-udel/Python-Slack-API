@@ -24,11 +24,15 @@ class SlackConversations(SlackClient):
 
         self.ts = None
 
+        self.purpose = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.purpose != None:
+            body['purpose'] = self.purpose
         if self.ts != None:
             body['ts'] = self.ts
         if self.exclude_archived != None:
