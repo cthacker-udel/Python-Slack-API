@@ -1185,6 +1185,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def leave_conversation(self):
+
+        url = base_url + '/conversations.leave'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
