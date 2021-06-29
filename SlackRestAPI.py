@@ -1285,6 +1285,22 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+class SlackDialog(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def open_dialog(self):
+
+        url = base_url + '/dialog.open'
+
+        body = self.client.SlackDialog.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
