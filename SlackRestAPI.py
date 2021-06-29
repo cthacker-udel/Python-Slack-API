@@ -1302,6 +1302,21 @@ class SlackDialog(SlackClient):
         pprint(request)
 
 
+class SlackDoNotDisturb(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def end_user_snooze_mode(self):
+
+        url = base_url + '/dnd.endSnooze'
+
+        request = requests.post(url,auth=self.client.token)
+
+        pprint(request)
+
+
 
 
 
