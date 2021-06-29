@@ -22,11 +22,15 @@ class SlackConversations(SlackClient):
         self.exclude_archived = None
         self.types = None
 
+        self.ts = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.ts != None:
+            body['ts'] = self.ts
         if self.exclude_archived != None:
             body['exclude_archived'] = self.exclude_archived
         if self.types != None:
@@ -74,3 +78,4 @@ class SlackConversations(SlackClient):
         self.types = None
         self.user = None
         self.users = None
+        self.ts = None

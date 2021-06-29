@@ -1205,6 +1205,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def set_read_cursor(self):
+
+        url = base_url + '/conversations.mark'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
