@@ -7,7 +7,6 @@ class SlackConversations(SlackClient):
         self.name = None
         self.is_private = None
         self.team_id = None
-
         self.cursor = None
         self.inclusive = None
         self.latest = None
@@ -15,22 +14,20 @@ class SlackConversations(SlackClient):
         self.oldest = None
         self.include_locate = None
         self.include_non_members = None
-
         self.users = None
         self.user = None
-
         self.exclude_archived = None
         self.types = None
-
         self.ts = None
-
         self.purpose = None
+        self.topic = None
 
 
     def generate_queries(self):
 
         body = {}
-
+        if self.topic != None:
+            body['topic'] = self.topic
         if self.purpose != None:
             body['purpose'] = self.purpose
         if self.ts != None:
@@ -83,3 +80,5 @@ class SlackConversations(SlackClient):
         self.user = None
         self.users = None
         self.ts = None
+        self.purpose = None
+        self.topic = None

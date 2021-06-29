@@ -1265,6 +1265,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def set_topic(self):
+
+        url = base_url + '/conversations.setTopic'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
