@@ -1175,6 +1175,16 @@ class SlackConversations(SlackClient):
 
         pprint(request)
 
+    def remove_conversation_user(self):
+
+        url = base_url + '/conversations.kick'
+
+        body = self.client.SlackConversations.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 

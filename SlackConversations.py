@@ -17,12 +17,15 @@ class SlackConversations(SlackClient):
         self.include_non_members = None
 
         self.users = None
+        self.user = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.user != None:
+            body['user'] = self.user
         if self.users != None:
             body['users'] = self.users
         if self.include_locate:
