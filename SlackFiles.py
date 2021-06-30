@@ -83,4 +83,12 @@ class SlackFiles(SlackClient):
         self.ts_to = None
         self.types = None
         self.user = None
+        self.channels = []
+        self.content = None
+        self.file = None
+        self.filename = None
+        self.filetype = None
+        self.initial_comment = None
+        self.thread_ts = None
+        self.title = None
 
