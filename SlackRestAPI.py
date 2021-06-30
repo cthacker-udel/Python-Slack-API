@@ -1361,7 +1361,7 @@ class SlackFiles(SlackClient):
         self.client = client
 
 
-    def delete_existing_file(self):
+    def delete_existing_file_comment(self):
 
         url = base_url + '/files.comments.delete'
 
@@ -1370,6 +1370,17 @@ class SlackFiles(SlackClient):
         request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
+
+    def delete_file(self):
+
+        url = base_url + '/files.delete'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
