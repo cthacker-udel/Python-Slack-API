@@ -1344,6 +1344,15 @@ class SlackDoNotDisturb(SlackClient):
 
         pprint(request)
 
+    def retrieve_dnd_status(self):
+
+        url = base_url + '/dnd.teamInfo'
+
+        body = self.client.SlackDoNotDisturb.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
 
 
 
