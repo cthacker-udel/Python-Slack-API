@@ -18,10 +18,32 @@ class SlackFiles(SlackClient):
         self.types = None
         self.user = None
 
+        self.content = None
+        self.filename = None
+        self.filetype = None
+        self.initial_comment = None
+        self.thread_ts = None
+        self.title = None
+        self.channels = []
+
     def generate_queries(self):
 
         body = {}
 
+        if self.filename != None:
+            body['filename'] = self.filename
+        if self.filetype != None:
+            body['filetype'] = self.filetype
+        if self.initial_comment != None:
+            body['initial_comment'] = self.initial_comment
+        if self.tread_ts != None:
+            body['thread_ts'] = self.thread_ts
+        if self.title != None:
+            body['title'] = self.title
+        if len(self.channels) > 0:
+            body['channels'] = ','.join(self.channels)
+        if self.content != None:
+            body['content'] = self.content
         if self.channel != None:
             body['channel'] = self.channel
         if self.show_files_hidden_by_limit != None:
