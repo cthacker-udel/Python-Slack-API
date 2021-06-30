@@ -1334,6 +1334,16 @@ class SlackDoNotDisturb(SlackClient):
 
         pprint(request)
 
+    def turn_on_dnd_session(self):
+
+        url = base_url + '/dnd.setSnooze'
+
+        body = self.client.SlackDoNotDisturb.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
