@@ -11,10 +11,29 @@ class SlackFiles(SlackClient):
         self.limit = None
         self.page = None
 
+        self.channel = None
+        self.show_files_hidden_by_limit = None
+        self.ts_from = None
+        self.ts_to = None
+        self.types = None
+        self.user = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.channel != None:
+            body['channel'] = self.channel
+        if self.show_files_hidden_by_limit != None:
+            body['show_files_hidden_by_limit'] = self.show_files_hidden_by_limit
+        if self.ts_from != None:
+            body['ts_from'] = self.ts_from
+        if self.ts_to != None:
+            body['ts_to'] = self.ts_to
+        if self.types != None:
+            body['types'] = self.types
+        if self.user != None:
+            body['user'] = self.user
         if self.file != None:
             body['file'] = self.file
         if self.id != None:
@@ -36,4 +55,10 @@ class SlackFiles(SlackClient):
         self.cursor = None
         self.limit = None
         self.page = None
+        self.channel = None
+        self.show_files_hidden_by_limit = None
+        self.ts_from = None
+        self.ts_to = None
+        self.types = None
+        self.user = None
 
