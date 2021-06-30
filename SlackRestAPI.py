@@ -1391,6 +1391,16 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+    def list_team_files(self):
+
+        url = base_url + '/files.list'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
