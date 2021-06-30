@@ -1401,6 +1401,16 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+    def revoke_file_sharing(self):
+
+        url = base_url + '/files.revokePublicURL'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
