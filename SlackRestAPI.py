@@ -1355,6 +1355,23 @@ class SlackDoNotDisturb(SlackClient):
         pprint(request)
 
 
+class SlackFiles(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def delete_existing_file(self):
+
+        url = base_url + '/files.comments.delete'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
