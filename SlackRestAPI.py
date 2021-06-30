@@ -1326,6 +1326,15 @@ class SlackDoNotDisturb(SlackClient):
 
         pprint(request)
 
+    def end_user_dnd_session(self):
+
+        url = base_url + '/dnd.endDnd'
+
+        request = requests.post(url,auth=self.client.token)
+
+        pprint(request)
+
+
 
 
 
