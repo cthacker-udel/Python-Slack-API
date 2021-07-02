@@ -1555,6 +1555,23 @@ class SlackOAuth(SlackClient):
         pprint(request)
 
 
+class SlackPins(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+    def pin_item_to_channel(self):
+
+        url = base_url + '/pins.add'
+
+        body = self.client.SlackPins.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
