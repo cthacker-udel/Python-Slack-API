@@ -1497,6 +1497,19 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+
+class SlackMigration(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+
+
 
 
 
