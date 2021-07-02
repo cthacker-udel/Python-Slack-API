@@ -1507,7 +1507,15 @@ class SlackMigration(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def map_user_to_global(self):
 
+        url = base_url + '/migration.exchange'
+
+        body = self.client.SlackMigration.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
 
 
 
