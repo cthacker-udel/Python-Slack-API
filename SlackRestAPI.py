@@ -1591,6 +1591,32 @@ class SlackPins(SlackClient):
 
         pprint(request)
 
+class SlackReactions(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def add_reaction(self):
+
+        url = base_url + '/reactions.add'
+
+        body = self.client.SlackReactions.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
+    def get_reactions(self):
+
+        url = base_url + '/reactions.get'
+
+        body = self.client.SlackReactions.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
