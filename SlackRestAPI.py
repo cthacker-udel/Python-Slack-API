@@ -1518,6 +1518,23 @@ class SlackMigration(SlackClient):
         pprint(request)
 
 
+class SlackOAuth(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def exchange_code_for_token(self):
+
+        url = base_url + '/oauth.access'
+
+        body = self.client.SlackOAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
+
 
 
 
