@@ -1571,6 +1571,16 @@ class SlackPins(SlackClient):
 
         pprint(request)
 
+    def list_pins(self):
+
+        url = base_url + '/pins.list'
+
+        body = self.client.SlackPins.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
