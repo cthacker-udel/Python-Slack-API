@@ -12,11 +12,33 @@ class SlackReactions(SlackClient):
         self.file_comment = None
         self.full = None
 
+        self.count = None
+        self.cursor = None
+        self.full = None
+        self.limit = None
+        self.page = None
+        self.team_id = None
+        self.user = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.count != None:
+            body['count'] = self.count
+        if self.cursor != None:
+            body['cursor'] = self.cursor
+        if self.full != None:
+            body['full'] = self.full
+        if self.limit != None:
+            body['limit'] = self.limit
+        if self.page != None:
+            body['page'] = self.page
+        if self.team_id != None:
+            body['team_id'] = self.team_id
+        if self.user != None:
+            body['user'] = self.user
         if self.file != None:
             body['file'] = self.file
         if self.file_comment != None:
@@ -35,6 +57,13 @@ class SlackReactions(SlackClient):
 
     def clear_queries(self):
 
+        self.count = None
+        self.cursor = None
+        self.full = None
+        self.limit = None
+        self.page = None
+        self.team_id = None
+        self.user = None
         self.file = None
         self.file_comment = None
         self.full = None

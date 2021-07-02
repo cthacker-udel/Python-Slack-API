@@ -1617,6 +1617,16 @@ class SlackReactions(SlackClient):
 
         pprint(request)
 
+    def list_reactions(self):
+
+        url = base_url + '/reactions.list'
+
+        body = self.client.SlackReactions.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
