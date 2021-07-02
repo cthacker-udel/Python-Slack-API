@@ -1471,6 +1471,16 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+    def share_remote_file(self):
+
+        url = base_url + '/files.remote.share'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
