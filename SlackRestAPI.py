@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import DriverManager as FirefoxDriverManager
 from selenium_stealth import stealth
 import time
+from requests.auth import HTTPBasicAuth
 
 
 base_url = 'https://slack.com/api'
@@ -52,7 +53,7 @@ class AdminAnalytics(SlackClient):
 
         body = self.client.SlackAdminAnalytics.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -67,7 +68,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -77,7 +78,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -87,7 +88,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -97,7 +98,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -107,7 +108,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -117,7 +118,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -127,7 +128,7 @@ class AdminApps(SlackClient):
 
         body = self.client.SlackAdminApps.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -144,7 +145,7 @@ class AdminAuth(SlackClient):
 
         body = self.client.SlackAdminAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -154,7 +155,7 @@ class AdminAuth(SlackClient):
 
         body = self.client.SlackAdminAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -165,7 +166,7 @@ class AdminAuth(SlackClient):
 
         body = self.client.SlackAdminAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -181,7 +182,7 @@ class AdminBarriers(SlackClient):
 
         body = self.client.SlackAdminBarriers.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -191,7 +192,7 @@ class AdminBarriers(SlackClient):
 
         body = self.client.SlackAdminBarriers.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -201,7 +202,7 @@ class AdminBarriers(SlackClient):
 
         body = self.client.SlackAdminBarriers.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -211,7 +212,7 @@ class AdminBarriers(SlackClient):
 
         body = self.client.SlackAdminBarriers.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -227,7 +228,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -238,7 +239,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -248,7 +249,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -258,7 +259,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -269,7 +270,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -279,7 +280,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -289,7 +290,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -299,7 +300,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -309,7 +310,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -319,7 +320,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -329,7 +330,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -339,7 +340,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -349,7 +350,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -359,7 +360,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -369,7 +370,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -379,7 +380,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -389,7 +390,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -399,7 +400,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -409,7 +410,7 @@ class AdminConversations(SlackClient):
 
         body = self.client.SlackAdminConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -425,7 +426,7 @@ class AdminEmoji(SlackClient):
 
         body = self.client.SlackAdminEmoji.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -435,7 +436,7 @@ class AdminEmoji(SlackClient):
 
         body = self.client.SlackAdminEmoji.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -445,7 +446,7 @@ class AdminEmoji(SlackClient):
 
         body = self.client.SlackAdminEmoji.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -455,7 +456,7 @@ class AdminEmoji(SlackClient):
 
         body = self.client.SlackAdminEmoji.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -465,7 +466,7 @@ class AdminEmoji(SlackClient):
 
         body = self.client.SlackAdminEmoji.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -482,7 +483,7 @@ class AdminInviteRequests(SlackClient):
 
         body = self.client.SlackAdminInviteRequests.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -492,7 +493,7 @@ class AdminInviteRequests(SlackClient):
 
         body = self.client.SlackAdminInviteRequests.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -502,7 +503,7 @@ class AdminInviteRequests(SlackClient):
 
         body = self.client.SlackAdminInviteRequests.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -512,7 +513,7 @@ class AdminInviteRequests(SlackClient):
 
         body = self.client.SlackAdminInviteRequests.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -522,7 +523,7 @@ class AdminInviteRequests(SlackClient):
 
         body = self.client.SlackAdminInviteRequests.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -538,7 +539,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -548,7 +549,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -558,7 +559,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -568,7 +569,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -578,7 +579,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -588,7 +589,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -598,7 +599,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -608,7 +609,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -618,7 +619,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -628,7 +629,7 @@ class AdminTeams(SlackClient):
 
         body = self.client.SlackTeams.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -644,7 +645,7 @@ class AdminUserGroups(SlackClient):
 
         body = self.client.SlackAdminUserGroups.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -654,7 +655,7 @@ class AdminUserGroups(SlackClient):
 
         body = self.client.SlackAdminUserGroups.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -664,7 +665,7 @@ class AdminUserGroups(SlackClient):
 
         body = self.client.SlackAdminUserGroups.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -675,7 +676,7 @@ class AdminUserGroups(SlackClient):
 
         body = self.client.SlackAdminUserGroups.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -691,7 +692,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -701,7 +702,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -711,7 +712,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -721,7 +722,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -731,7 +732,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -741,7 +742,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -751,7 +752,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -761,7 +762,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -771,7 +772,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -781,7 +782,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -792,7 +793,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -802,7 +803,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -812,7 +813,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -822,7 +823,7 @@ class AdminUsers(SlackClient):
 
         body = self.client.SlackAdminUsers.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -838,7 +839,7 @@ class SlackApi(SlackClient):
 
         body = self.client.SlackAPI.generate_queries()
 
-        request = requests.post(url, auth=self.client.token, json=body)
+        request = requests.post(url, auth=HTTPBasicAuth('',self.client.token), json=body)
 
         pprint(request)
 
@@ -852,7 +853,7 @@ class SlackApps(SlackClient):
 
         url = base_url + '/apps.connections.open'
 
-        request = requests.post(url,auth=self.client.token)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token))
 
         pprint(request)
 
@@ -862,7 +863,7 @@ class SlackApps(SlackClient):
 
         body = self.client.SlackApps.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -872,7 +873,7 @@ class SlackApps(SlackClient):
 
         body = self.client.SlackApps.generate_queries()
 
-        request = requests.post(url, auth=self.client.token, json=body)
+        request = requests.post(url, auth=HTTPBasicAuth('',self.client.token), json=body)
 
         pprint(request)
 
@@ -888,7 +889,7 @@ class SlackAuth(SlackClient):
 
         body = self.client.SlackAuth.generate_queries()
 
-        request = requests.get(url, auth=self.client.token, params=body)
+        request = requests.get(url, auth=HTTPBasicAuth('',self.client.token), params=body)
 
         pprint(request)
 
@@ -898,7 +899,7 @@ class SlackAuth(SlackClient):
 
         body = self.client.SlackAuth.generate_queries()
 
-        request = requests.post(url, auth=self.client.token, json=body)
+        request = requests.post(url, auth=HTTPBasicAuth('',self.client.token), json=body)
 
         pprint(request)
 
@@ -908,7 +909,7 @@ class SlackAuth(SlackClient):
 
         body = self.client.SlackAuth.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -925,7 +926,7 @@ class SlackBots(SlackClient):
 
         body = self.client.SlackBots.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -940,7 +941,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCalls.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -950,7 +951,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCall.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -960,7 +961,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCalls.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -970,7 +971,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCalls.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -980,7 +981,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCalls.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -990,7 +991,7 @@ class SlackCalls(SlackClient):
 
         body = self.client.SlackCalls.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1005,7 +1006,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1015,7 +1016,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1025,7 +1026,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1035,7 +1036,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1045,7 +1046,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1055,7 +1056,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1065,7 +1066,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1075,7 +1076,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1085,7 +1086,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1095,7 +1096,7 @@ class SlackChat(SlackClient):
 
         body = self.client.SlackChat.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1111,7 +1112,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1121,7 +1122,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1131,7 +1132,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1141,7 +1142,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1151,7 +1152,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1161,7 +1162,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1171,7 +1172,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1181,7 +1182,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1191,7 +1192,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1201,7 +1202,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1211,7 +1212,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1221,7 +1222,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1231,7 +1232,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1241,7 +1242,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1251,7 +1252,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1261,7 +1262,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1271,7 +1272,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1281,7 +1282,7 @@ class SlackConversations(SlackClient):
 
         body = self.client.SlackConversations.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1297,7 +1298,7 @@ class SlackDialog(SlackClient):
 
         body = self.client.SlackDialog.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1312,7 +1313,7 @@ class SlackDoNotDisturb(SlackClient):
 
         url = base_url + '/dnd.endSnooze'
 
-        request = requests.post(url,auth=self.client.token)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token))
 
         pprint(request)
 
@@ -1322,7 +1323,7 @@ class SlackDoNotDisturb(SlackClient):
 
         body = self.client.SlackDoNotDisturb.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1330,7 +1331,7 @@ class SlackDoNotDisturb(SlackClient):
 
         url = base_url + '/dnd.endDnd'
 
-        request = requests.post(url,auth=self.client.token)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token))
 
         pprint(request)
 
@@ -1340,7 +1341,7 @@ class SlackDoNotDisturb(SlackClient):
 
         body = self.client.SlackDoNotDisturb.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1350,7 +1351,7 @@ class SlackDoNotDisturb(SlackClient):
 
         body = self.client.SlackDoNotDisturb.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1367,7 +1368,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1377,7 +1378,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1387,7 +1388,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1397,7 +1398,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1407,7 +1408,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1417,7 +1418,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1427,7 +1428,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1437,7 +1438,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1447,7 +1448,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1457,7 +1458,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1467,7 +1468,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1477,7 +1478,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1487,7 +1488,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1497,7 +1498,7 @@ class SlackFiles(SlackClient):
 
         body = self.client.SlackFiles.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1513,7 +1514,7 @@ class SlackMigration(SlackClient):
 
         body = self.client.SlackMigration.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1530,7 +1531,7 @@ class SlackOAuth(SlackClient):
 
         body = self.client.SlackOAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1540,7 +1541,7 @@ class SlackOAuth(SlackClient):
 
         body = self.client.SlackOAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1550,7 +1551,7 @@ class SlackOAuth(SlackClient):
 
         body = self.client.SlackOAuth.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1567,7 +1568,7 @@ class SlackPins(SlackClient):
 
         body = self.client.SlackPins.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1577,7 +1578,7 @@ class SlackPins(SlackClient):
 
         body = self.client.SlackPins.generate_queries()
 
-        request = requests.get(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1587,7 +1588,7 @@ class SlackPins(SlackClient):
 
         body = self.client.SlackPins.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,json=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1603,7 +1604,7 @@ class SlackReactions(SlackClient):
 
         body = self.client.SlackReactions.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,params=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
@@ -1613,7 +1614,7 @@ class SlackReactions(SlackClient):
 
         body = self.client.SlackReactions.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1623,9 +1624,17 @@ class SlackReactions(SlackClient):
 
         body = self.client.SlackReactions.generate_queries()
 
-        request = requests.post(url,auth=self.client.token,params=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
+
+    def remove_reaction(self):
+
+        url = base_url + '/reactions.remove'
+
+        body = self.client.SlackReactions.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
 
 
