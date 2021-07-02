@@ -32,10 +32,23 @@ class SlackFiles(SlackClient):
         self.indexable_file_contents = None
         self.preview_image = None
 
+        self.highlight = None
+        self.sort = None
+        self.sort_dir = None
+        self.team_id = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.highlight != None:
+            body['highlight'] = self.highlight
+        if self.sort != None:
+            body['sort'] = self.sort
+        if self.sort_dir != None:
+            body['sort_dir'] = self.sort_dir
+        if self.team_id != None:
+            body['team_id'] = self.team_id
         if self.external_id != None:
             body['external_id'] = self.external_id
         if self.external_url != None:
@@ -111,4 +124,8 @@ class SlackFiles(SlackClient):
         self.external_url = None
         self.indexable_file_contents = None
         self.preview_image = None
+        self.highlight = None
+        self.sort = None
+        self.sort_dir = None
+        self.team_id = None
 

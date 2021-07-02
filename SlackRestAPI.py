@@ -1491,6 +1491,12 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+    def remote_file_search(self):
+
+        url = base_url + '/search.files'
+
+        body = self.client.SlackFiles.generate_queries()
+
 
 
 
