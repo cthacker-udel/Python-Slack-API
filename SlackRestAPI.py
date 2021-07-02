@@ -1544,6 +1544,16 @@ class SlackOAuth(SlackClient):
 
         pprint(request)
 
+    def exchange_code_for_access_token_v2(self):
+
+        url = base_url + '/oauth.v2.access'
+
+        body = self.client.SlackOAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
