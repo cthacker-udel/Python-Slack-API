@@ -1581,6 +1581,16 @@ class SlackPins(SlackClient):
 
         pprint(request)
 
+    def unpin(self):
+
+        url = base_url + '/pins.remove'
+
+        body = self.client.SlackPins.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
