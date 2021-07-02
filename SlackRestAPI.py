@@ -1524,7 +1524,7 @@ class SlackOAuth(SlackClient):
         self.client = client
 
 
-    def exchange_code_for_token(self):
+    def exchange_code_for_access_token(self):
 
         url = base_url + '/oauth.access'
 
@@ -1533,6 +1533,17 @@ class SlackOAuth(SlackClient):
         request = requests.post(url,auth=self.client.token,json=body)
 
         pprint(request)
+
+    def exchange_code_for_workspace_token(self):
+
+        url = base_url + '/oauth.token'
+
+        body = self.client.SlackOAuth.generate_queries()
+
+        request = requests.post(url,auth=self.client.token,json=body)
+
+        pprint(request)
+
 
 
 
