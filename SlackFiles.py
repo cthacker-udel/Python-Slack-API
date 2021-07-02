@@ -26,10 +26,26 @@ class SlackFiles(SlackClient):
         self.title = None
         self.channels = []
 
+        self.external_id = None
+        self.external_url = None
+        self.filetype = None
+        self.indexable_file_contents = None
+        self.preview_image = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.external_id != None:
+            body['external_id'] = self.external_id
+        if self.external_url != None:
+            body['external_url'] = self.external_url
+        if self.title != None:
+            body['title'] = self.title
+        if self.indexable_file_contents != None:
+            body['indexable_file_contents'] = self.indexable_file_contents
+        if self.preview_image != None:
+            body['preview_image'] = self.preview_image
         if self.filename != None:
             body['filename'] = self.filename
         if self.filetype != None:
@@ -91,4 +107,8 @@ class SlackFiles(SlackClient):
         self.initial_comment = None
         self.thread_ts = None
         self.title = None
+        self.external_id = None
+        self.external_url = None
+        self.indexable_file_contents = None
+        self.preview_image = None
 
