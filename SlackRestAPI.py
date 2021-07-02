@@ -1441,6 +1441,16 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+    def get_remote_file_info(self):
+
+        url = base_url + '/files.remote.info'
+
+        body = self.client.SlackFiles.generate_queries()
+
+        request = requests.get(url,auth=self.client.token,params=body)
+
+        pprint(request)
+
 
 
 
