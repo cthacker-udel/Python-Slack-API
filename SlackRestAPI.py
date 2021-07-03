@@ -1739,6 +1739,16 @@ class SlackSearch(SlackClient):
 
         pprint(request)
 
+    def message_search(self):
+
+        url = base_url + '/search.messages'
+
+        body = self.client.SlackSearch.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
