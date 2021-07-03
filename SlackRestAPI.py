@@ -1636,6 +1636,24 @@ class SlackReactions(SlackClient):
 
         request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
+        pprint(request)
+
+class SlackReminders(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def create_reminder(self):
+
+        url = base_url + '/reminders.add'
+
+        body = self.client.SlackReminders.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
