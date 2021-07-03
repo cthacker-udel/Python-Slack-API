@@ -6,6 +6,7 @@ class SlackSearch(SlackClient):
 
         self.query = None
         self.count = None
+        self.cursor = None
         self.highlight = None
         self.page = None
         self.sort = None
@@ -17,6 +18,8 @@ class SlackSearch(SlackClient):
 
         body = {}
 
+        if self.cursor != None:
+            body['cursor'] = self.cursor
         if self.query != None:
             body['query'] = self.query
         if self.count != None:
@@ -42,3 +45,4 @@ class SlackSearch(SlackClient):
         self.sort = None
         self.sort_dir = None
         self.team_id = None
+        self.cursor = None
