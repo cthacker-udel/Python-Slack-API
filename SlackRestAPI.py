@@ -1702,9 +1702,19 @@ class SlackRTM(SlackClient):
         self.client = client
 
 
-    def start_rtm_session(self):
+    def start_rtm_session_connect(self):
 
         url = base_url + '/rtm.connect'
+
+        body = self.client.SlackRTM.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+    def start_rtm_session_start(self):
+
+        url = base_url + '/rtm.start'
 
         body = self.client.SlackRTM.generate_queries()
 
