@@ -1777,6 +1777,16 @@ class SlackStars(SlackClient):
 
         pprint(request)
 
+    def remove_star(self):
+
+        url = base_url + '/stars.remove'
+
+        body = self.client.SlackStars.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
