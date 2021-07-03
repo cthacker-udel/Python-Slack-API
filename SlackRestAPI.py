@@ -1695,6 +1695,24 @@ class SlackReminders(SlackClient):
         pprint(request)
 
 
+class SlackRTM(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+
+    def start_rtm_session(self):
+
+        url = base_url + '/rtm.connect'
+
+        body = self.client.SlackRTM.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+
 
 
 
