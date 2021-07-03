@@ -1684,6 +1684,16 @@ class SlackReminders(SlackClient):
 
         pprint(request)
 
+    def list_reminders(self):
+
+        url = base_url + '/reminders.list'
+
+        body = self.client.SlackReminders.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
