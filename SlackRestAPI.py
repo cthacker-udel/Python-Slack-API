@@ -1750,6 +1750,24 @@ class SlackSearch(SlackClient):
         pprint(request)
 
 
+class SlackStars(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+
+    def add_star(self):
+
+        url = base_url + '/stars.add'
+
+        body = self.client.SlackStars.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+
 
 
 
