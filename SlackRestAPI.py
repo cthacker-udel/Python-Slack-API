@@ -1767,6 +1767,16 @@ class SlackStars(SlackClient):
 
         pprint(request)
 
+    def list_user_stars(self):
+
+        url = base_url + '/stars.list'
+
+        body = self.client.SlackStars.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
