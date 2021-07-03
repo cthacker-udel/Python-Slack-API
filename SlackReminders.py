@@ -8,6 +8,7 @@ class SlackReminders(SlackClient):
         self.time = None
         self.team_id = None
         self.user = None
+        self.reminder = None
 
 
     def generate_queries(self):
@@ -22,10 +23,13 @@ class SlackReminders(SlackClient):
             body['team_id'] = self.team_id
         if self.user != None:
             body['user'] = self.user
+        if self.reminder != None:
+            body['reminder'] = self.reminder
         return body
 
     def clear_queries(self):
 
+        self.reminder = None
         self.text = None
         self.time = None
         self.team_id = None
