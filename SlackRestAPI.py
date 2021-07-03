@@ -1662,7 +1662,17 @@ class SlackReminders(SlackClient):
 
         request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
-        pprint(requesT)
+        pprint(request)
+
+    def delete_reminder(self):
+
+        url = base_url + '/reminders.delete'
+
+        body = self.client.SlackReminders.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
 
 
 
