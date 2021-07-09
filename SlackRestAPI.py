@@ -1795,11 +1795,21 @@ class SlackTeam(SlackClient):
 
     def get_team_access_logs(self):
 
-        url = base_url + '/api/team/accessLogs'
+        url = base_url + '/team.accessLogs'
 
         body = self.client.SlackTeam.generate_queries()
 
         request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+    def get_billable_team_members(self):
+
+        url = base_url + '/team.billableInfo'
+
+        body = self.client.SlackTeam.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 

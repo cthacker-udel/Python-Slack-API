@@ -7,6 +7,7 @@ class SlackTeam(SlackClient):
         self.count = None
         self.page = None
         self.team_id = None
+        self.user = None
 
 
     def generate_queries(self):
@@ -21,6 +22,8 @@ class SlackTeam(SlackClient):
             queries['page'] = self.page
         if self.team_id != None:
             queries['team_id'] = self.team_id
+        if self.user != None:
+            queries['user'] = self.user
 
         return queries
 
@@ -29,3 +32,4 @@ class SlackTeam(SlackClient):
         self.count = None
         self.page = None
         self.team_id = None
+        self.user = None
