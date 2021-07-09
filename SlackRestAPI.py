@@ -1787,6 +1787,22 @@ class SlackStars(SlackClient):
 
         pprint(request)
 
+class SlackTeam(SlackClient):
+
+    def __init__(self,client):
+         self.client = client
+
+
+    def get_team_access_logs(self):
+
+        url = base_url + '/api/team/accessLogs'
+
+        body = self.client.SlackTeam.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
