@@ -1833,6 +1833,16 @@ class SlackTeam(SlackClient):
 
         pprint(request)
 
+    def get_teams_profile(self):
+
+        url = base_url + '/team.profile.get'
+
+        body = self.client.SlackTeam.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 

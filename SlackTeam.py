@@ -13,12 +13,15 @@ class SlackTeam(SlackClient):
         self.change_type = None
         self.service_id = None
         self.team_id = None
+        self.visibility = None
 
 
     def generate_queries(self):
 
         queries = {}
 
+        if self.visibility != None:
+            queries['visibility'] = self.visibility
         if self.app_id != None:
             queries['app_id'] = self.app_id
         if self.change_type != None:
@@ -54,3 +57,4 @@ class SlackTeam(SlackClient):
         self.change_type = None
         self.service_id = None
         self.team_id = None
+        self.visibility = None
