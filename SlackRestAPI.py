@@ -1809,7 +1809,7 @@ class SlackTeam(SlackClient):
 
         body = self.client.SlackTeam.generate_queries()
 
-        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
@@ -1819,7 +1819,17 @@ class SlackTeam(SlackClient):
 
         body = self.client.SlackTeam.generate_queries()
 
-        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+    def get_team_integration_logs(self):
+
+        url = base_url + '/team.integrationLogs'
+
+        body = self.client.SlackTeam.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
 
         pprint(request)
 
