@@ -1986,6 +1986,17 @@ class SlackUsers(SlackClient):
 
         pprint(request)
 
+    def find_user_via_email(self):
+
+        url = base_url + '/users.lookupByEmail'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+
 
 
 

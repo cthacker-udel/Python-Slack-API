@@ -11,12 +11,15 @@ class SlackUsers(SlackClient):
         self.types = None
         self.user = None
         self.include_locale = None
+        self.email = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.email != None:
+            body['email'] = self.email
         if self.include_locale != None:
             body['include_locale'] = self.include_locale
         if self.cursor != None:
@@ -42,3 +45,4 @@ class SlackUsers(SlackClient):
         self.team_id = None
         self.types = None
         self.user = None
+        self.email = None
