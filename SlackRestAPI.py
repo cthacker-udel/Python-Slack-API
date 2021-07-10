@@ -1900,6 +1900,16 @@ class SlackUserGroups(SlackClient):
 
         pprint(request)
 
+    def list_usergroup_users(self):
+
+        url = base_url + '/usergroups.users.list'
+
+        body = self.client.SlackUserGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
