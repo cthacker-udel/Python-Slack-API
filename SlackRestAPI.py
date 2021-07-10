@@ -1921,6 +1921,14 @@ class SlackUserGroups(SlackClient):
         pprint(request)
 
 
+class SlackUsers(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+
+
 
 
 
