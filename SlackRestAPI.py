@@ -1843,6 +1843,19 @@ class SlackTeam(SlackClient):
 
         pprint(request)
 
+class SlackUserGroups(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+
+    def creat_user_group(self):
+
+        url = base_url + "/usergroups.create"
+
+
+
 
 
 
