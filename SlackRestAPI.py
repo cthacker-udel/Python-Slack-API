@@ -1926,7 +1926,15 @@ class SlackUsers(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def list_user_conversations(self):
 
+        url = base_url + '/users.conversations'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
 
 
 
