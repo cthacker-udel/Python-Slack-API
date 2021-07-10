@@ -1976,6 +1976,16 @@ class SlackUsers(SlackClient):
 
         pprint(request)
 
+    def list_all_team_users(self):
+
+        url = base_url + '/users.list'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
