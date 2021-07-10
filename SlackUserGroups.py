@@ -13,10 +13,14 @@ class SlackUserGroups(SlackClient):
 
         self.usergroup = None
 
+        self.include_disabled = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.include_disabled != None:
+            body['include_disabled'] = self.include_disabled
         if self.usergroup != None:
             body['usergroup'] = self.usergroup
         if self.channels != None:
@@ -35,6 +39,7 @@ class SlackUserGroups(SlackClient):
 
     def clear_queries(self):
 
+        self.include_disabled = None
         self.channels = None
         self.name = None
         self.description = None
