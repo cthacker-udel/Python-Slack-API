@@ -1854,7 +1854,11 @@ class SlackUserGroups(SlackClient):
 
         url = base_url + "/usergroups.create"
 
+        body = self.client.SlackUserGroups.generate_queries()
 
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
 
 
 
