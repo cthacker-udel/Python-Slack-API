@@ -1906,7 +1906,17 @@ class SlackUserGroups(SlackClient):
 
         body = self.client.SlackUserGroups.generate_queries()
 
-        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+    def update_usergroup_users(self):
+
+        url = base_url + '/usergroups.users.update'
+
+        body = self.client.SlackUserGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
 
         pprint(request)
 
