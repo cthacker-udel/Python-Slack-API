@@ -1956,6 +1956,16 @@ class SlackUsers(SlackClient):
 
         pprint(request)
 
+    def get_user_identity(self):
+
+        url = base_url + '/users.identity'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
