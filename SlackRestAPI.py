@@ -2064,6 +2064,16 @@ class SlackViews(SlackClient):
 
         pprint(request)
 
+    def publish_static_user_view(self):
+
+        url = base_url + '/views.publish'
+
+        body = self.client.SlackViews.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
