@@ -2036,7 +2036,15 @@ class SlackUsers(SlackClient):
 
         pprint(request)
 
+    def set_user_profile_info(self):
 
+        url = base_url + '/users.profile.set'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
 
 
 
