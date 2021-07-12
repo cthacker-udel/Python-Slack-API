@@ -2074,6 +2074,28 @@ class SlackViews(SlackClient):
 
         pprint(request)
 
+    def push_root_view(self):
+
+        url = base_url + '/views.push'
+
+        body = self.client.SlackViews.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+    def update_existing_view(self):
+
+        url = base_url + '/views.update'
+
+        body = self.client.SlackViews.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+
+
 
 
 

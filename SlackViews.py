@@ -8,12 +8,16 @@ class SlackViews(SlackClient):
         self.view = {}
         self.user_id = None
         self.hash = None
+        self.view_id = None
+        self.external_id = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.view_id != None:
+            body['view_id'] = self.view_id
         if self.trigger_id != None:
             body['trigger_id'] = self.trigger_id
         if 'type' in self.view.keys() and 'title' in self.view.keys() and 'blocks' in self.view.keys():
@@ -33,3 +37,5 @@ class SlackViews(SlackClient):
         self.view = {}
         self.user_id = None
         self.hash = None
+        self.view_id = None
+        self.external_id = None
