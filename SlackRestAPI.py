@@ -2047,6 +2047,24 @@ class SlackUsers(SlackClient):
         pprint(request)
 
 
+class SlackViews(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+
+    def open_user_view(self):
+
+        url = base_url + '/views.open'
+
+        body = self.client.SlackViews.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+
 
 
 
