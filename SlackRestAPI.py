@@ -1996,6 +1996,16 @@ class SlackUsers(SlackClient):
 
         pprint(request)
 
+    def mark_user_active(self):
+
+        url = base_url + '/users.setActive'
+
+        body = self.client.SlackUsers.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
