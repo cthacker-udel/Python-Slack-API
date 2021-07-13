@@ -75,6 +75,8 @@ class SlackChannels(SlackClient):
 
     def clear_queries(self):
 
+        self.name_tagging = None
+        self.purpose = None
         self.ts = None
         self.cursor = None
         self.exclude_members = None
