@@ -1098,6 +1098,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def invite_user_to_channel(self):
+
+        url = base_url + '/channels.invite'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
