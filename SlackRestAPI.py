@@ -1118,6 +1118,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def remove_channel_user(self):
+
+        url = base_url + '/channels.kick'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
