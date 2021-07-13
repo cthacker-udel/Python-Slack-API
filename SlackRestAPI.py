@@ -2120,6 +2120,17 @@ class SlackWorkflows(SlackClient):
 
         pprint(request)
 
+    def update_workflow_step_config(self):
+
+        url = base_url + '/workflows.updateStep'
+
+        body = self.client.SlackWorkflows.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+
 
 
 
