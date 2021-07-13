@@ -15,11 +15,15 @@ class SlackChannels(SlackClient):
         self.oldest = None
         self.unreads = None
 
+        self.include_locale = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.include_locale != None:
+            body['include_locale'] = self.include_locale
         if self.channel != None:
             body['channel'] = self.channel
         if self.name != None:
@@ -51,3 +55,4 @@ class SlackChannels(SlackClient):
         self.latest = None
         self.oldest = None
         self.unreads = None
+        self.include_locale = None
