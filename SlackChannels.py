@@ -9,6 +9,12 @@ class SlackChannels(SlackClient):
         self.team_id = None
         self.validate = None
 
+        self.count = None
+        self.inclusive = None
+        self.latest = None
+        self.oldest = None
+        self.unreads = None
+
 
     def generate_queries(self):
 
@@ -22,6 +28,16 @@ class SlackChannels(SlackClient):
             body['team_id'] = self.team_id
         if self.validate != None:
             body['validate'] = self.validate
+        if self.count != None:
+            body['count'] = self.count
+        if self.inclusive != None:
+            body['inclusive'] = self.inclusive
+        if self.latest != None:
+            body['latest'] = self.latest
+        if self.oldest != None:
+            body['oldest'] = self.oldest
+        if self.unreads != None:
+            body['unreads'] = self.unreads
         return body
 
 
@@ -30,3 +46,8 @@ class SlackChannels(SlackClient):
         self.name = None
         self.team_id = None
         self.validate = None
+        self.count = None
+        self.inclusive = None
+        self.latest = None
+        self.oldest = None
+        self.unreads = None
