@@ -24,11 +24,15 @@ class SlackChannels(SlackClient):
         self.exclude_members = None
         self.limit = None
 
+        self.ts = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.ts != None:
+            body['ts'] = self.ts
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.exclude_archived != None:
@@ -64,6 +68,7 @@ class SlackChannels(SlackClient):
 
     def clear_queries(self):
 
+        self.ts = None
         self.cursor = None
         self.exclude_members = None
         self.exclude_archived = None
