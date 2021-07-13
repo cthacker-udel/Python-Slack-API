@@ -895,6 +895,16 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def return_team_resource_grants(self):
+
+        url = base_url + '/apps.permissions.resources.list'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 class SlackAuth(SlackClient):
 
     def __init__(self,client):
