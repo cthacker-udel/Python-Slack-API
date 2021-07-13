@@ -1178,6 +1178,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def set_channel_purpose(self):
+
+        url = base_url + '/channels.setPurpose'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
