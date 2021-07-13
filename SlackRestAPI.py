@@ -885,6 +885,16 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def allows_app_request_scopes(self):
+
+        url = base_url + '/apps.permissions.request'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 class SlackAuth(SlackClient):
 
     def __init__(self,client):
