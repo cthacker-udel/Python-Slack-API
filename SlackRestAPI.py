@@ -2110,6 +2110,16 @@ class SlackWorkflows(SlackClient):
 
         pprint(request)
 
+    def indicate_workflow_failed(self):
+
+        url = base_url + '/workflows.stepFailed'
+
+        body = self.client.SlackWorkflows.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
