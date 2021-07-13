@@ -1052,6 +1052,22 @@ class SlackCalls(SlackClient):
 
         pprint(request)
 
+
+class SlackChannels(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def archive_channel(self):
+
+        url = base_url + '/channels.archive'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
