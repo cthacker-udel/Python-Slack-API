@@ -1138,6 +1138,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def list_team_channels(self):
+
+        url = base_url + '/channels.list'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
