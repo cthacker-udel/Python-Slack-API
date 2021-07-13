@@ -913,6 +913,17 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def return_user_grants_and_scopes(self):
+
+        url = base_url + '/apps.permissions.users.list'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+
 class SlackAuth(SlackClient):
 
     def __init__(self,client):
