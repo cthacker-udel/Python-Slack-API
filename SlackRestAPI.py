@@ -2094,6 +2094,22 @@ class SlackViews(SlackClient):
 
         pprint(request)
 
+class SlackWorkflows(SlackClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+    def indicate_workflow_complete(self):
+
+        url = base_url + '/workflows.stepCompleted'
+
+        body = self.client.SlackWorkflows.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
