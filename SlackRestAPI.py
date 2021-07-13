@@ -1078,6 +1078,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def fetch_channel_message_event_history(self):
+
+        url = base_url + '/channels.history'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
