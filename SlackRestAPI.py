@@ -849,6 +849,14 @@ class SlackApps(SlackClient):
     def __init__(self,client):
         self.client = client
 
+    def return_team_permissions(self):
+
+        url = base_url + '/apps.permissions.info'
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token))
+
+        pprint(request)
+
     def generate_websocket_url(self):
 
         url = base_url + '/apps.connections.open'
