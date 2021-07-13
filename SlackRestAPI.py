@@ -905,6 +905,14 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def return_team_scopes(self):
+
+        url = base_url + '/apps.permissions.scopes.list'
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token))
+
+        pprint(request)
+
 class SlackAuth(SlackClient):
 
     def __init__(self,client):
