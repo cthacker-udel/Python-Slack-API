@@ -1068,6 +1068,16 @@ class SlackChannels(SlackClient):
 
         pprint(request)
 
+    def create_channel(self):
+
+        url = base_url + '/channels.create'
+
+        body = self.client.SlackChannels.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 class SlackChat(SlackClient):
 
     def __init__(self,client):
