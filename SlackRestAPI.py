@@ -923,6 +923,16 @@ class SlackApps(SlackClient):
 
         pprint(request)
 
+    def enable_app_user_access(self):
+
+        url = base_url + '/apps.permissions.users.request'
+
+        body = self.client.SlackApps.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 class SlackAuth(SlackClient):
 
