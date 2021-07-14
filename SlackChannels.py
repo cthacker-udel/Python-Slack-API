@@ -28,12 +28,15 @@ class SlackChannels(SlackClient):
 
         self.purpose = None
         self.name_tagging = None
+        self.topic = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.topic != None:
+            body['topic'] = self.topic
         if self.purpose != None:
             body['purpose'] = self.purpose
         if self.name_tagging != None:
