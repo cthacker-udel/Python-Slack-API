@@ -1771,6 +1771,16 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+    def invite_user_to_private_channel(self):
+
+        url = base_url + '/groups.invite'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 class SlackMigration(SlackClient):
 

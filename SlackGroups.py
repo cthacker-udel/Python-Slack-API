@@ -14,12 +14,15 @@ class SlackGroups(SlackClient):
         self.latest = None
         self.oldest = None
         self.unreads = None
+        self.user = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.user != None:
+            body['user'] = self.user
         if self.count != None:
             body['count'] = self.count
         if self.inclusive != None:
