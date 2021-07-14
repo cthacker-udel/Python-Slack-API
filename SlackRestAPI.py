@@ -1751,6 +1751,16 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+    def fetch_channel_message_event_history(self):
+
+        url = base_url + '/groups.history'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 class SlackMigration(SlackClient):
 
