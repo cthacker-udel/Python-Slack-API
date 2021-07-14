@@ -1791,6 +1791,15 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+    def leave_private_channel(self):
+
+        url = base_url + '/groups.leave'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
 
 class SlackMigration(SlackClient):
 
