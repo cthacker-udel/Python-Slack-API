@@ -25,11 +25,15 @@ class SlackGroups(SlackClient):
 
         self.purpose = None
 
+        self.topic = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.topic != None:
+            body['topic'] = self.topic
         if self.purpose != None:
             body['purpose'] = self.purpose
         if self.ts != None:
@@ -77,3 +81,4 @@ class SlackGroups(SlackClient):
         self.channel = None
         self.ts = None
         self.purpose = None
+        self.topic = None
