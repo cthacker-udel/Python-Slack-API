@@ -1715,6 +1715,22 @@ class SlackFiles(SlackClient):
 
         pprint(request)
 
+class SlackGroups(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def archive_private_channel(self):
+
+        url = base_url + '/groups.archive'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 class SlackMigration(SlackClient):
 
