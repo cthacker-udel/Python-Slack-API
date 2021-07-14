@@ -21,11 +21,14 @@ class SlackGroups(SlackClient):
         self.exclude_members = None
         self.limit = None
 
+        self.ts = None
+
 
     def generate_queries(self):
 
         body = {}
-
+        if self.ts != None:
+            body['ts'] = self.ts
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.exclude_archived != None:
@@ -66,3 +69,4 @@ class SlackGroups(SlackClient):
         self.team_id = None
         self.validate = None
         self.channel = None
+        self.ts = None
