@@ -1781,6 +1781,16 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+    def remove_user_from_private_channel(self):
+
+        url = base_url + '/groups.kick'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 class SlackMigration(SlackClient):
 
