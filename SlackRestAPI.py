@@ -1731,6 +1731,16 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+    def create_private_channel(self):
+
+        url = base_url + '/groups.create'
+
+        body = self.client.SlackGroups.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 class SlackMigration(SlackClient):
 
