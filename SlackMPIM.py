@@ -12,12 +12,16 @@ class SlackMPIM(SlackClient):
         self.cursor = None
         self.limit = None
         self.ts = None
+        self.users = []
 
 
     def generate_queries(self):
 
         body = {}
 
+
+        if len(self.users) > 0:
+            body['users'] = ','.join(self.users)
         if self.ts != None:
             body['ts'] = self.ts
         if self.cursor != None:
@@ -49,3 +53,4 @@ class SlackMPIM(SlackClient):
         self.latest = None
         self.oldest = None
         self.unreads = None
+        self.users = []

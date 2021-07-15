@@ -1998,6 +1998,16 @@ class SlackMPIM(SlackClient):
 
         pprint(request)
 
+    def open_mpim_direct_message_channel(self):
+
+        url = base_url + '/mpim.open'
+
+        body = self.client.SlackMPIM.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 class SlackOAuth(SlackClient):
 
