@@ -1908,7 +1908,7 @@ class SlackIM(SlackClient):
 
     def set_direct_message_cursor(self):
 
-        url = base_url + '/im.list'
+        url = base_url + '/im.mark'
 
         body = self.client.SlackIM.generate_queries()
 
