@@ -12,11 +12,14 @@ class SlackIM(SlackClient):
         self.unreads = None
         self.cursor = None
         self.limit = None
+        self.ts = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.ts != None:
+            body['ts'] = self.ts
         if self.cursor != None:
             body['cursor'] = self.cursor
         if self.limit != None:
@@ -37,6 +40,7 @@ class SlackIM(SlackClient):
 
     def clear_queries(self):
 
+        self.ts = None
         self.cursor = None
         self.limit = None
         self.channel = None
