@@ -13,11 +13,20 @@ class SlackIM(SlackClient):
         self.cursor = None
         self.limit = None
         self.ts = None
+        self.user = None
+        self.include_locale = None
+        self.return_im = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.user != None:
+            body['user'] = self.user
+        if self.include_locale != None:
+            body['include_locale'] = self.include_locale
+        if self.return_im != None:
+            body['return_im'] = self.return_im
         if self.ts != None:
             body['ts'] = self.ts
         if self.cursor != None:
@@ -39,7 +48,9 @@ class SlackIM(SlackClient):
         return body
 
     def clear_queries(self):
-
+        self.user = None
+        self.include_locale = None
+        self.return_im = None
         self.ts = None
         self.cursor = None
         self.limit = None
