@@ -1953,6 +1953,23 @@ class SlackMigration(SlackClient):
 
         pprint(request)
 
+class SlackMPIM(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def close_multiparty_direct_message_channel(self):
+
+        url = base_url + '/mpim.close'
+
+        body = self.client.SlackMPIM.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
+
+
 
 class SlackOAuth(SlackClient):
 
