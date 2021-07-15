@@ -1916,6 +1916,16 @@ class SlackIM(SlackClient):
 
         pprint(request)
 
+    def open_direct_message_channel(self):
+
+        url = base_url + '/im.open'
+
+        body = self.client.SlackIM.generate_queries()
+
+        request = requests.post(url,auth=HTTPBasicAuth('',self.client.token),json=body)
+
+        pprint(request)
+
 
 
 
