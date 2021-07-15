@@ -1968,7 +1968,15 @@ class SlackMPIM(SlackClient):
 
         pprint(request)
 
+    def fetch_mpim_message_history(self):
 
+        url = base_url + '/mpim.history'
+
+        body = self.client.SlackMPIM.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
 
 
 class SlackOAuth(SlackClient):
