@@ -16,11 +16,14 @@ class SlackIM(SlackClient):
         self.user = None
         self.include_locale = None
         self.return_im = None
+        self.thread_ts = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.thread_ts != None:
+            body['thread_ts'] = self.thread_ts
         if self.user != None:
             body['user'] = self.user
         if self.include_locale != None:
@@ -48,6 +51,8 @@ class SlackIM(SlackClient):
         return body
 
     def clear_queries(self):
+
+        self.thread_ts = None
         self.user = None
         self.include_locale = None
         self.return_im = None
