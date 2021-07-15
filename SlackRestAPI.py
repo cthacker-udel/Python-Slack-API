@@ -1938,8 +1938,6 @@ class SlackIM(SlackClient):
 
 
 
-
-
 class SlackMigration(SlackClient):
 
     def __init__(self,client):
