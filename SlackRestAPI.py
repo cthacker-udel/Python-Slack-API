@@ -1881,6 +1881,25 @@ class SlackGroups(SlackClient):
 
         pprint(request)
 
+class SlackIM(SlackClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def fetch_im_history(self):
+
+        url = base_url + '/im.history'
+
+        body = self.client.SlackIM.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
+
+
+
+
 class SlackMigration(SlackClient):
 
     def __init__(self,client):
