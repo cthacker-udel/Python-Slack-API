@@ -1926,6 +1926,16 @@ class SlackIM(SlackClient):
 
         pprint(request)
 
+    def retrieve_direct_message_thread(self):
+
+        url = base_url + '/im.replies'
+
+        body = self.client.SlackIM.generate_queries()
+
+        request = requests.get(url,auth=HTTPBasicAuth('',self.client.token),params=body)
+
+        pprint(request)
+
 
 
 
